@@ -2,7 +2,7 @@ const snarkjs = require("snarkjs");
 const fs = require("fs");
 
 async function run() {
-    const { proof, publicSignals } = await snarkjs.groth16.fullProve({"a": [1, 2, 3, 2, 2], "price": [3,1,6,2,4], "markpricetimes10": 35}, "./priceintegrity_js/priceintegrity.wasm", "priceintegrity_final.zkey");
+    const { proof, publicSignals } = await snarkjs.groth16.fullProve({"a": [1, 0, 2, 5, 2], "price": [159359,159420,159350,159321,159401], "markpricetimes10": 1593466}, "./priceintegrity_js/priceintegrity.wasm", "priceintegrity_final.zkey");
 
 
     const funcinput = await snarkjs.groth16.exportSolidityCallData(proof, publicSignals);
